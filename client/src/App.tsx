@@ -1,13 +1,24 @@
 import './App.css';
+import SignUp from './Components/SignUp/SignUp'
+import LogIn from './Components/LogIn/LogIn'
+import { Routes, Route, Link } from 'react-router-dom'
+
 
 function App() {
+  let loggedIn = false
   return (
     <div className="App">
-      <form action="http://localhost:8080/user/login" method="post" id='test-form'>
-        <input type="email" name="email" placeholder= "email"/>
-        <input type="password" name="password" placeholder= "password"/>
-        <input type="submit" value="submit" />
-      </form>
+      {loggedIn? 
+      'yes' 
+      :
+      <nav className='auth-bar'>
+        <Link to='/login'>Log In</Link>
+        <Link to='/signup'>Sign Up</Link>
+      </nav>}
+      <Routes>
+        <Route path='/login' element={<LogIn/>}/>
+        <Route path='/signup' element={<SignUp/>}/>
+      </Routes>
     </div>
   );
 }

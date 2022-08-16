@@ -1,0 +1,23 @@
+#test-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 5px;
+    align-items: center;
+}
+
+#test-form > input {
+    text-align: center;
+}
+
+#test-form > :last-child {
+    width: 100px;
+}
+
+.signup-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
